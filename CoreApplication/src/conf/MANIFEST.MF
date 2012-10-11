@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-SymbolicName: ro.codecamp.ebp.core
-Bundle-Version: 1.0.0
+Bundle-Version: 1.0.1
 Bundle-Name: Core Application
 Bundle-ClassPath: WEB-INF/classes
 Web-ContextPath: /CoreApplication
