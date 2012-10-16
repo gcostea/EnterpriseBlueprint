@@ -1,22 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-   xmlns:osgi="http://www.eclipse.org/gemini/blueprint/schema/blueprint"
-   xsi:schemaLocation="http://www.springframework.org/schema/beans
-       http://www.springframework.org/schema/beans/spring-beans.xsd
-       http://www.eclipse.org/gemini/blueprint/schema/blueprint
-       http://www.eclipse.org/gemini/blueprint/schema/blueprint/gemini-blueprint.xsd">
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:osgi="http://www.eclipse.org/gemini/blueprint/schema/blueprint"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context-3.0.xsd
+                           http://www.eclipse.org/gemini/blueprint/schema/blueprint
+                           http://www.eclipse.org/gemini/blueprint/schema/blueprint/gemini-blueprint.xsd">
+   
+    <osgi:list id="navigationServices" interface="ro.codecamp.ebp.core.api.NavigationService" />
 
+    <context:component-scan base-package="ro.codecamp.ebp.core" />
+    <context:annotation-config />
+        
     <!-- Import services
     <osgi:reference id="serviceThree" interface="com.product.api.ServiceThree" />
     -->
     
     <!-- Local Beans
-    <bean id="indexBackingBean" class="com.productone.backingbeans.IndexBackingBean" scope="request">
-        <property name="serviceThree" ref="serviceThree" />
-    </bean>   
-    <bean id="serviceOneImpl" class="com.productone.services.ServiceOneImpl">
-        <property name="entityManagerFactoryBuilder" ref="entityManagerFactoryBuilder" />
+    <bean id="indexBean" class="ro.codecamp.ebp.core.beans.IndexBean" scope="request">
+        <property name="navigationServices" ref="navigationServices" />
     </bean>
     -->
     
