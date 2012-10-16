@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: ro.codecamp.ebp.core.api
+Bundle-Version: 1.0.0
+Bundle-Name: Core Application API
+Import-Package: org.osgi.framework, javax.servlet, javax.servlet.http,
+                javax.inject, javax.servlet.annotation,org.springframework.web.jsf,
+                org.springframework.web.context, org.springframework.web.context.support,
+                org.springframework.util, org.springframework.ui.context.support,
+                org.springframework.ui.context, org.eclipse.gemini.blueprint.extender,
+                org.springframework.beans.factory.config,
+                org.eclipse.gemini.blueprint.context.support, org.eclipse.gemini.blueprint.context,
+                org.springframework.core.io, org.springframework.context, org.springframework.beans,
+                org.slf4j, org.springframework.context.annotation, org.springframework.stereotype
+Export-Package: ro.codecamp.ebp.core.api;version="1.0.0",
+                ro.codecamp.ebp.core.util;version="1.0.0"
