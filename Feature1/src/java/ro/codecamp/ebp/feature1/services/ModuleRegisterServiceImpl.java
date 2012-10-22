@@ -19,6 +19,7 @@ public class ModuleRegisterServiceImpl implements ModuleRegisterService
         ModuleRegistryInformation info = new ModuleRegistryInformation();
         
         info.setModuleName(bundleContext.getBundle().getSymbolicName());
+        info.setModuleFriendlyName("Feature One");
         info.setModuleVersion(bundleContext.getBundle().getVersion().toString());
         info.setModuleContext(servletContext.getContextPath());
         

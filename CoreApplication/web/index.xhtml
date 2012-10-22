@@ -10,7 +10,8 @@
         Installed Features:
         <ul>
         <ui:repeat value="#{indexBean.registeredModuleInformation}" var="moduleInfo">
-            <li><a href="#{moduleInfo.moduleContext}">#{moduleInfo.moduleName} @ #{moduleInfo.moduleVersion}</a></li>
+            <li><a href="#{moduleInfo.moduleContext}">#{moduleInfo.moduleFriendlyName}</a>
+                (#{moduleInfo.moduleName} @ #{moduleInfo.moduleVersion})</li>
         </ui:repeat>
         </ul>
     </h:body>
