@@ -8,9 +8,11 @@
     </h:head>
     <h:body>
         Installed Features:
-        <ui:repeat value="#{indexBean.features}" var="feature">
-            <h:outputText value="#{feature}" />
+        <ul>
+        <ui:repeat value="#{indexBean.registeredModuleInformation}" var="moduleInfo">
+            <li><a href="#{moduleInfo.moduleContext}">#{moduleInfo.moduleName} @ #{moduleInfo.moduleVersion}</a></li>
         </ui:repeat>
+        </ul>
     </h:body>
 </html>
 

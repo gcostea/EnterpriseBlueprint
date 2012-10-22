@@ -4,37 +4,28 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import javax.annotation.Resource;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
-import ro.codecamp.ebp.core.api.NavigationService;
+import ro.codecamp.ebp.core.api.modules.ModuleRegisterService;
+import ro.codecamp.ebp.core.api.modules.ModuleRegistryInformation;
 
 @Component
 @Scope("request")
 public class IndexBean 
 {   
     @Resource
-    private List navigationServices;
+    private List<ModuleRegisterService> moduleRegisterServices;
     
-    public List<String> getFeatures()
+    public List<ModuleRegistryInformation> getRegisteredModuleInformation()
     {
-        List<String> features = new ArrayList<String>();
+        List<ModuleRegistryInformation> registeredModulesInformation = new ArrayList<ModuleRegistryInformation>();
         
-        for (Iterator iterator = navigationServices.iterator(); iterator.hasNext();) 
+        for (Iterator iterator = moduleRegisterServices.iterator(); iterator.hasNext();) 
         {
-            NavigationService serviceInst = (NavigationService)iterator.next();
-            features.add(serviceInst.getSectionName());
+            ModuleRegisterService serviceInst = (ModuleRegisterService)iterator.next();
+            registeredModulesInformation.add(serviceInst.getRegistryInformation());
         }
         
-        return features;
-    }
-
-    public List getNavigationServices() {
-        return navigationServices;
-    }
-
-    public void setNavigationServices(List navigationServices) {
-        this.navigationServices = navigationServices;
+        return registeredModulesInformation;
     }
 }

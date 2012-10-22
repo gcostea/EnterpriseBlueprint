@@ -10,23 +10,9 @@
                            http://www.eclipse.org/gemini/blueprint/schema/blueprint
                            http://www.eclipse.org/gemini/blueprint/schema/blueprint/gemini-blueprint.xsd">
    
-    <osgi:list id="navigationServices" interface="ro.codecamp.ebp.core.api.NavigationService" />
+    <osgi:list id="moduleRegisterServices" interface="ro.codecamp.ebp.core.api.modules.ModuleRegisterService" />
 
     <context:component-scan base-package="ro.codecamp.ebp.core" />
-    <context:annotation-config />
-        
-    <!-- Import services
-    <osgi:reference id="serviceThree" interface="com.product.api.ServiceThree" />
-    -->
-    
-    <!-- Local Beans
-    <bean id="indexBean" class="ro.codecamp.ebp.core.beans.IndexBean" scope="request">
-        <property name="navigationServices" ref="navigationServices" />
-    </bean>
-    -->
-    
-    <!-- Export Services
-    <osgi:service id="serviceOne" ref="serviceOneImpl" interface="com.product.api.ServiceOne" />
-    -->
+    <context:annotation-config />      
     
 </beans>
