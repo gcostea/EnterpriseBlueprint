@@ -15,5 +15,6 @@ Import-Package: org.osgi.framework, javax.servlet, javax.servlet.http,
                 org.eclipse.gemini.blueprint.context.support, org.eclipse.gemini.blueprint.context,
                 org.springframework.core.io, org.springframework.context, org.springframework.beans,
                 org.slf4j, org.springframework.context.annotation, org.springframework.stereotype,
-                ro.codecamp.ebp.core.api;version="1.0.0",
+                javax.faces.context, javax.annotation,
+                ro.codecamp.ebp.core.api.modules;version="1.0.0",
                 ro.codecamp.ebp.core.util;version="1.0.0"

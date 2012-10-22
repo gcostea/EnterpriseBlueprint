@@ -14,10 +14,10 @@
     <context:annotation-config />
         
     <!-- Local Beans -->
-    <bean id="navigationServiceImpl" class="ro.codecamp.ebp.feature1.services.NavigationServiceImpl" />
+    <bean id="moduleRegisterServiceImpl" class="ro.codecamp.ebp.feature1.services.ModuleRegisterServiceImpl" />
         
     <!-- Export Services -->
-    <osgi:service id="navigationService" ref="navigationServiceImpl" 
-                  interface="ro.codecamp.ebp.core.api.NavigationService" />
+    <osgi:service id="moduleRegisterServiceImplSvc" ref="moduleRegisterServiceImpl" 
+                  interface="ro.codecamp.ebp.core.api.modules.ModuleRegisterService" />
     
 </beans>
