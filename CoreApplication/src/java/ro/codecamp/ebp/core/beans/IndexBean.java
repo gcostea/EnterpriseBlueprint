@@ -6,24 +6,23 @@ import java.util.List;
 import javax.annotation.Resource;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
-import ro.codecamp.ebp.core.api.modules.ModuleRegisterService;
-import ro.codecamp.ebp.core.api.modules.ModuleRegistryInformation;
+import ro.codecamp.ebp.core.api.modules.ModuleInfo;
+import ro.codecamp.ebp.core.api.modules.RegisterModuleHook;
 
 @Component
 @Scope("request")
 public class IndexBean 
 {   
-    @Resource
-    private List<ModuleRegisterService> moduleRegisterServices;
+    @Resource private List<RegisterModuleHook> registeredModules;
     
-    public List<ModuleRegistryInformation> getRegisteredModuleInformation()
+    public List<ModuleInfo> getRegisteredModuleInformation()
     {
-        List<ModuleRegistryInformation> registeredModulesInformation = new ArrayList<ModuleRegistryInformation>();
+        List<ModuleInfo> registeredModulesInformation = new ArrayList<ModuleInfo>();
         
-        for (Iterator iterator = moduleRegisterServices.iterator(); iterator.hasNext();) 
+        for(Iterator iterator = registeredModules.iterator(); iterator.hasNext();) 
         {
-            ModuleRegisterService serviceInst = (ModuleRegisterService)iterator.next();
-            registeredModulesInformation.add(serviceInst.getRegistryInformation());
+            RegisterModuleHook moduleHook = (RegisterModuleHook)iterator.next();
+            registeredModulesInformation.add(moduleHook.getRegistryInformation());
         }
         
         return registeredModulesInformation;

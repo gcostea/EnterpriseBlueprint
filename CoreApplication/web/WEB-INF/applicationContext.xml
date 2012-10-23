@@ -10,9 +10,9 @@
                            http://www.eclipse.org/gemini/blueprint/schema/blueprint
                            http://www.eclipse.org/gemini/blueprint/schema/blueprint/gemini-blueprint.xsd">
    
-    <osgi:list id="moduleRegisterServices" interface="ro.codecamp.ebp.core.api.modules.ModuleRegisterService" />
+    <osgi:list id="registeredModules" interface="ro.codecamp.ebp.core.api.modules.RegisterModuleHook" />
 
-    <context:component-scan base-package="ro.codecamp.ebp.core" />
+    <context:component-scan base-package="ro.codecamp.ebp.core.beans" />
     <context:annotation-config />      
     
 </beans>

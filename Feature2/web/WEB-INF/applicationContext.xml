@@ -14,10 +14,10 @@
     <context:annotation-config />
         
     <!-- Local Beans -->
-    <bean id="moduleRegisterServiceImpl" class="ro.codecamp.ebp.feature2.services.ModuleRegisterServiceImpl" />
+    <bean id="registerModuleHookImpl" class="ro.codecamp.ebp.feature2.services.RegisterModuleHookImpl" />
         
     <!-- Export Services -->
-    <osgi:service id="moduleRegisterServiceImplSvc" ref="moduleRegisterServiceImpl" 
-                  interface="ro.codecamp.ebp.core.api.modules.ModuleRegisterService" />
+    <osgi:service id="registerModuleHookImplSvc" ref="registerModuleHookImpl" 
+                  interface="ro.codecamp.ebp.core.api.modules.RegisterModuleHook" />
     
 </beans>

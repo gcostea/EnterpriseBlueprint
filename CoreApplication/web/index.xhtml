@@ -7,11 +7,11 @@
         <title>Facelet Title</title>
     </h:head>
     <h:body>
-        Installed Features:
+        Installed Features: <h:outputText value="[ None ]" rendered="#{empty indexBean.registeredModuleInformation}" />
         <ul>
         <ui:repeat value="#{indexBean.registeredModuleInformation}" var="moduleInfo">
-            <li><a href="#{moduleInfo.moduleContext}">#{moduleInfo.moduleFriendlyName}</a>
-                (#{moduleInfo.moduleName} @ #{moduleInfo.moduleVersion})</li>
+            <li><a href="#{moduleInfo.appContext}">#{moduleInfo.friendlyName}</a>
+                (#{moduleInfo.name} @ #{moduleInfo.version})</li>
         </ui:repeat>
         </ul>
     </h:body>
