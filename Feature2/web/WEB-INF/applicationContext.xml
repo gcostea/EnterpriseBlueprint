@@ -20,4 +20,7 @@
     <osgi:service id="registerModuleHookImplSvc" ref="registerModuleHookImpl" 
                   interface="ro.codecamp.ebp.core.api.modules.RegisterModuleHook" />
     
+    <!-- Import Services -->
+    <osgi:reference id="registerCoreModuleHook" interface="ro.codecamp.ebp.core.api.modules.RegisterCoreModuleHook" />
+    
 </beans>

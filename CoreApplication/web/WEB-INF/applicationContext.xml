@@ -12,6 +12,13 @@
    
     <osgi:list id="registeredModules" interface="ro.codecamp.ebp.core.api.modules.RegisterModuleHook" />
 
+    <!-- Local Beans -->
+    <bean id="registerCoreModuleHookImpl" class="ro.codecamp.ebp.core.services.RegisterCoreModuleHookImpl" />
+        
+    <!-- Export Services -->
+    <osgi:service id="registerCoreModuleHookImplSvc" ref="registerCoreModuleHookImpl" 
+                  interface="ro.codecamp.ebp.core.api.modules.RegisterCoreModuleHook" />
+    
     <context:component-scan base-package="ro.codecamp.ebp.core.beans" />
     <context:annotation-config />      
     
