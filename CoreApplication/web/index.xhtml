@@ -3,17 +3,15 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:ui="http://java.sun.com/jsf/facelets">
-    <h:head>
-        <title>Facelet Title</title>
-    </h:head>
-    <h:body>
-        Installed Features: <h:outputText value="[ None ]" rendered="#{empty indexBean.registeredModuleInformation}" />
-        <ul>
-        <ui:repeat value="#{indexBean.registeredModuleInformation}" var="moduleInfo">
-            <li><a href="#{moduleInfo.appContext}">#{moduleInfo.friendlyName}</a>
-                (#{moduleInfo.name} @ #{moduleInfo.version})</li>
-        </ui:repeat>
-        </ul>
-    </h:body>
+    <ui:composition template="WEB-INF/resources/main-template.xhtml">
+        <ui:define name="content">
+            Installed Features: <h:outputText value="[ None ]" rendered="#{empty indexBean.registeredModuleInformation}" />
+            <ul>
+            <ui:repeat value="#{indexBean.registeredModuleInformation}" var="moduleInfo">
+                <li><a href="#{moduleInfo.appContext}">#{moduleInfo.friendlyName}</a>
+                    (#{moduleInfo.name} @ #{moduleInfo.version})</li>
+            </ui:repeat>
+            </ul>
+        </ui:define>
+    </ui:composition>
 </html>
-

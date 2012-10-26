@@ -3,11 +3,9 @@ package ro.codecamp.ebp.core.services;
 import javax.annotation.Resource;
 import javax.servlet.ServletContext;
 import org.osgi.framework.BundleContext;
-import org.springframework.stereotype.Component;
 import ro.codecamp.ebp.core.api.modules.ModuleInfo;
 import ro.codecamp.ebp.core.api.modules.RegisterCoreModuleHook;
 
-@Component
 public class RegisterCoreModuleHookImpl implements RegisterCoreModuleHook
 {
     @Resource private ServletContext servletContext;
