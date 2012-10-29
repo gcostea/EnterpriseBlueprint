@@ -6,6 +6,14 @@
 
     <application>
         <variable-resolver>org.springframework.web.jsf.SpringBeanVariableResolver</variable-resolver>
+        <locale-config>
+            <supported-locale>en</supported-locale>
+            <default-locale>en</default-locale>
+        </locale-config>
+        <resource-bundle>
+            <base-name>messages</base-name>
+            <var>msg</var>
+        </resource-bundle>
     </application>
     
 </faces-config>

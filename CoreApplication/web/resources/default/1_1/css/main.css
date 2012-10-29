@@ -1,0 +1,98 @@
+* {
+    padding:0px;
+    margin:0px;
+    font-family:sans-serif;
+}
+
+body {
+    background-color:#cccccc;
+}
+
+.MainWrapper {
+    float:left;
+    clear:both;
+    width: 100%;
+    background-color:white;
+}
+
+.Header {
+    float:left;
+    clear:both;
+    padding:5px 0px;
+    width: 100%;
+    background-color: #006699;
+    color:white;
+}
+
+.Header h1 {
+    text-align:right;
+    font-size:large;
+    font-weight:bold;
+    margin:5px;
+}
+
+.NavigationBar {
+    float:left;
+    clear:both;
+    width: 100%;
+    background-color:#cccccc;
+    border-bottom:solid 1px gray;
+    color:white;
+    text-align:left;
+}
+
+
+.NavigationBar ul {
+    width:100%;
+    float:left;
+    clear:both;
+    padding-top:2px;
+    list-style-type:none;
+}
+
+.NavigationBar li {
+    background-color:#999999;
+    color:white;
+    float:left;
+    clear:none;
+    list-style-type:none;
+    margin:0px 2px 0px 2px;
+    padding:0px 2px 0px 2px;
+    border-top:solid 1px gray;
+    border-left:solid 1px gray;
+    border-right:solid 1px gray;
+}
+
+.ActiveTab {
+    background-color:#666666;
+}
+
+.NavigationBar a:link, .NavigationBar a:visited {
+    font-size:small;
+    color:white;
+    text-decoration:none;
+}
+
+.NavigationBar a:hover {
+    font-size:small;
+    color:white;
+    text-decoration:none;
+}
+
+.Body {
+    float:left;
+    clear:both;
+    padding:5px 0px;
+    width: 100%;
+    background-color: white;
+    min-height:300px;
+}
+
+.Footer {
+    float:left;
+    clear:both;
+    width: 100%;
+    background-color:#cccccc;
+    border-top:solid 1px gray;
+    height:20px;
+}

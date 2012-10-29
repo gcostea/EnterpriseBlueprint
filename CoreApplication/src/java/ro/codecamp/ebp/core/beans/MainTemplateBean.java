@@ -11,7 +11,7 @@ import ro.codecamp.ebp.core.api.modules.RegisterModuleHook;
 
 @Component
 @Scope("request")
-public class IndexBean 
+public class MainTemplateBean 
 {   
     @Resource private List<RegisterModuleHook> registeredModules;
     

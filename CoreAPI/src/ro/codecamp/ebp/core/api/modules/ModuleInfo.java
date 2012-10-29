@@ -6,6 +6,7 @@ public class ModuleInfo
     private String friendlyName;
     private String version;
     private String appContext;
+    private Boolean isSelected;
 
     //<editor-fold desc="Accessors" defaultstate="collapsed">
     public String getName() 
