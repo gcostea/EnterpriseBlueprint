@@ -8,4 +8,8 @@
         <variable-resolver>org.springframework.web.jsf.SpringBeanVariableResolver</variable-resolver>
     </application>
     
+    <factory>
+        <external-context-factory>ro.codecamp.ebp.core.util.CustomExternalContextFactory</external-context-factory>
+    </factory>
+    
 </faces-config>

@@ -32,4 +32,10 @@
             ro.codecamp.ebp.core.util.ServerOsgiBundleXmlWebApplicationContext
         </param-value>
     </context-param>
+    
+    <context-param>
+        <param-name>javax.faces.FACELETS_RESOURCE_RESOLVER</param-name>
+        <param-value>ro.codecamp.ebp.core.util.CustomResourceResolver</param-value>
+    </context-param> 
+    
 </web-app>

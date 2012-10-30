@@ -10,17 +10,18 @@
                            http://www.eclipse.org/gemini/blueprint/schema/blueprint
                            http://www.eclipse.org/gemini/blueprint/schema/blueprint/gemini-blueprint.xsd">
 
+    <context:component-scan base-package="ro.codecamp.ebp.core.util" />    
     <context:component-scan base-package="ro.codecamp.ebp.feature2" />
     <context:annotation-config />
         
     <!-- Local Beans -->
-    <bean id="registerModuleHookImpl" class="ro.codecamp.ebp.feature2.services.RegisterModuleHookImpl" />
+    <bean id="registeredModuleImpl" class="ro.codecamp.ebp.feature2.services.RegisteredModuleImpl" />
         
     <!-- Export Services -->
-    <osgi:service id="registerModuleHookImplSvc" ref="registerModuleHookImpl" 
-                  interface="ro.codecamp.ebp.core.api.modules.RegisterModuleHook" />
+    <osgi:service id="registeredModuleImplSvc" ref="registeredModuleImpl" 
+                  interface="ro.codecamp.ebp.core.api.modules.RegisteredModule" />
     
     <!-- Import Services -->
-    <osgi:reference id="registerCoreModuleHook" interface="ro.codecamp.ebp.core.api.modules.RegisterCoreModuleHook" />
+    <osgi:reference id="registeredCoreModule" interface="ro.codecamp.ebp.core.api.modules.RegisteredCoreModule" />
     
 </beans>

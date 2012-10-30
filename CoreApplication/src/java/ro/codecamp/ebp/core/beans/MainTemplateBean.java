@@ -7,13 +7,13 @@ import javax.annotation.Resource;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 import ro.codecamp.ebp.core.api.modules.ModuleInfo;
-import ro.codecamp.ebp.core.api.modules.RegisterModuleHook;
+import ro.codecamp.ebp.core.api.modules.RegisteredModule;
 
 @Component
 @Scope("request")
 public class MainTemplateBean 
 {   
-    @Resource private List<RegisterModuleHook> registeredModules;
+    @Resource private List<RegisteredModule> registeredModules;
     
     public List<ModuleInfo> getRegisteredModuleInformation()
     {
@@ -21,8 +21,8 @@ public class MainTemplateBean
         
         for(Iterator iterator = registeredModules.iterator(); iterator.hasNext();) 
         {
-            RegisterModuleHook moduleHook = (RegisterModuleHook)iterator.next();
-            registeredModulesInformation.add(moduleHook.getRegistryInformation());
+            RegisteredModule registeredModule = (RegisteredModule)iterator.next();
+            registeredModulesInformation.add(registeredModule.getModuleInfo());
         }
         
         return registeredModulesInformation;

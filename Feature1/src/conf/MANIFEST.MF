@@ -6,8 +6,9 @@ Bundle-Name: Feature One
 Bundle-ClassPath: WEB-INF/classes
 Web-ContextPath: /Feature1
 Spring-Context: *;create-asynchronously:=true
-Import-Package: org.osgi.framework, javax.servlet, javax.servlet.http,
+Import-Package: org.osgi.framework, javax.servlet, javax.servlet.http, javax.annotation,
                 javax.inject, javax.servlet.annotation,org.springframework.web.jsf,
+                javax.faces, javax.faces.context, javax.faces.view.facelets,
                 org.springframework.web.context, org.springframework.web.context.support,
                 org.springframework.util, org.springframework.ui.context.support,
                 org.springframework.ui.context, org.eclipse.gemini.blueprint.extender,
@@ -15,6 +16,5 @@ Import-Package: org.osgi.framework, javax.servlet, javax.servlet.http,
                 org.eclipse.gemini.blueprint.context.support, org.eclipse.gemini.blueprint.context,
                 org.springframework.core.io, org.springframework.context, org.springframework.beans,
                 org.slf4j, org.springframework.context.annotation, org.springframework.stereotype,
-                javax.faces.context, javax.annotation,
                 ro.codecamp.ebp.core.api.modules;version="1.0.2",
                 ro.codecamp.ebp.core.util;version="1.0.0"

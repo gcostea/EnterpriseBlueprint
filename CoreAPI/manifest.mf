@@ -4,6 +4,7 @@ Bundle-SymbolicName: ro.codecamp.ebp.core.api
 Bundle-Version: 1.0.2
 Bundle-Name: Core Application API
 Import-Package: org.osgi.framework, javax.servlet, javax.servlet.http,
+                javax.faces, javax.faces.context, javax.faces.view.facelets,
                 javax.inject, javax.servlet.annotation,org.springframework.web.jsf,
                 org.springframework.web.context, org.springframework.web.context.support,
                 org.springframework.util, org.springframework.ui.context.support,
