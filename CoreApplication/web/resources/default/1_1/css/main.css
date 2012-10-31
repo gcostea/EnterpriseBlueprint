@@ -1,6 +1,6 @@
 * { padding:0px; margin:0px; font-family:sans-serif; }
 
-body { background-color: #e2e2e2; text-align:center; margin:auto; padding-top:100px; }
+body { background-color: #e2e2e2; text-align:center; margin:auto; padding-top:50px; }
 
 .CoreModule { background-color: #006699; border:solid 1px black; 
               border-radius:5px; -moz-border-radius:5px; -webkit-border-radius:5px;

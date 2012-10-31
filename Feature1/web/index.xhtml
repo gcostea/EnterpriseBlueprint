@@ -11,17 +11,23 @@
     <h:body>
         <h:form id="MainForm">
             <cc:poll interval="1000" render="MainForm:CoreModule" />
-            <h:panelGrid id="CoreModule" styleClass="CoreModule">
-                <a href="#{indexBean.moduleRegistryService.coreModuleInfo.appContext}">
-                    #{indexBean.moduleRegistryService.coreModuleInfo.friendlyName}</a>
-                <h:outputText value="#{indexBean.moduleRegistryService.coreModuleInfo.version}"
-                              styleClass="VersionText" />
-                <ui:repeat value="#{indexBean.moduleRegistryService.registeredModulesInfo}" var="module">
-                    <h:panelGrid styleClass="FeatureModule">
-                        <a href="#{module.appContext}">#{module.friendlyName}</a>
-                        <h:outputText styleClass="VersionText" value="#{module.version}" />
+            <h:panelGrid columns="2" styleClass="ModuleContentWrapper" columnClasses="ModuleContentColumn1,ModuleContentColumn2">
+                <h:panelGrid id="CoreModule" styleClass="CoreModuleNav">
+                    <a href="#{indexBean.moduleRegistryService.coreModuleInfo.appContext}">
+                        #{indexBean.moduleRegistryService.coreModuleInfo.friendlyName}</a>
+                    <ui:repeat value="#{indexBean.moduleRegistryService.registeredModulesInfo}" var="module">
+                        <h:panelGrid styleClass="FeatureModuleNav" 
+                                     rendered="#{indexBean.currentModule.moduleInfo.name != module.name}">
+                            <a href="#{module.appContext}">#{module.friendlyName}</a>
+                        </h:panelGrid>
+                    </ui:repeat>
+                </h:panelGrid>
+                <h:panelGrid styleClass="ModuleContent" columnClasses="ModuleContentColumn">
+                    <h:panelGrid>
+                        <a href="#{indexBean.currentModule.moduleInfo.appContext}">#{indexBean.currentModule.moduleInfo.friendlyName}</a>
                     </h:panelGrid>
-                </ui:repeat>
+                    <h:panelGrid>Content</h:panelGrid>
+                </h:panelGrid>
             </h:panelGrid>
         </h:form>
     </h:body>
