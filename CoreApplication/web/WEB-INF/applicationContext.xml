@@ -18,9 +18,12 @@
 
     <!-- Service Implementation Beans -->
     <bean id="registeredCoreModuleImpl" class="ro.codecamp.ebp.core.services.RegisteredCoreModuleImpl" />
+    <bean id="moduleRegistryServiceImpl" class="ro.codecamp.ebp.core.services.ModuleRegistryServiceImpl" />
         
     <!-- Export Services -->
     <osgi:service id="registeredCoreModuleImplSvc" ref="registeredCoreModuleImpl" 
                   interface="ro.codecamp.ebp.core.api.modules.RegisteredCoreModule" />
+    <osgi:service id="moduleRegistryServiceImplSvc" ref="moduleRegistryServiceImpl" 
+                  interface="ro.codecamp.ebp.core.api.modules.ModuleRegistryService" />
     
 </beans>

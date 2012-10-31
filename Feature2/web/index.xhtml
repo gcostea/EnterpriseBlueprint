@@ -2,13 +2,28 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:cc="http://java.sun.com/jsf/composite/comp">
     <h:head>
         <title>Modular Application Demo</title>
-        <h:outputStylesheet name="main.css" library="css" />
+        <h:outputStylesheet name="css/main.css" library="default" />
     </h:head>
     <h:body>
-        Back to Core: <a href="#{indexBean.registeredCoreModuleInformation.appContext}">#{indexBean.registeredCoreModuleInformation.friendlyName}</a>
+        <h:form id="MainForm">
+            <cc:poll interval="1000" render="MainForm:CoreModule" />
+            <h:panelGrid id="CoreModule" styleClass="CoreModule">
+                <a href="#{indexBean.moduleRegistryService.coreModuleInfo.appContext}">
+                    #{indexBean.moduleRegistryService.coreModuleInfo.friendlyName}</a>
+                <h:outputText value="#{indexBean.moduleRegistryService.coreModuleInfo.version}"
+                              styleClass="VersionText" />
+                <ui:repeat value="#{indexBean.moduleRegistryService.registeredModulesInfo}" var="module">
+                    <h:panelGrid styleClass="FeatureModule">
+                        <a href="#{module.appContext}">#{module.friendlyName}</a>
+                        <h:outputText styleClass="VersionText" value="#{module.version}" />
+                    </h:panelGrid>
+                </ui:repeat>
+            </h:panelGrid>
+        </h:form>
     </h:body>
 </html>
 
