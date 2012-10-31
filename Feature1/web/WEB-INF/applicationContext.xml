@@ -15,12 +15,18 @@
                 
     <!-- Local Beans -->
     <bean id="registeredModuleImpl" class="ro.codecamp.ebp.feature1.services.RegisteredModuleImpl" />
-        
+    <bean id="customerServiceImpl" class="ro.codecamp.ebp.feature1.services.CustomerServiceImpl" />
+            
     <!-- Export Services -->
     <osgi:service id="registeredModuleImplSvc" ref="registeredModuleImpl" 
                   interface="ro.codecamp.ebp.core.api.modules.RegisteredModule" />
+    <osgi:service id="customerServiceImplSvc" ref="customerServiceImpl" 
+                  interface="ro.codecamp.ebp.core.api.customers.CustomerService" />
     
     <!-- Import Services -->
     <osgi:reference id="moduleRegistryService" interface="ro.codecamp.ebp.core.api.modules.ModuleRegistryService" />
+    <osgi:reference id="entityManagerFactoryBuilder" 
+                    interface="org.osgi.service.jpa.EntityManagerFactoryBuilder"
+                    filter="(osgi.unit.name=Feature1PU)" />
     
 </beans>

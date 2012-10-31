@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-SymbolicName: ro.codecamp.ebp.core.api
-Bundle-Version: 1.0.2
+Bundle-Version: 1.0.3
 Bundle-Name: Core Application API
 Import-Package: org.osgi.framework, javax.servlet, javax.servlet.http,
                 javax.faces, javax.faces.context, javax.faces.view.facelets,
@@ -14,4 +14,5 @@ Import-Package: org.osgi.framework, javax.servlet, javax.servlet.http,
                 org.springframework.core.io, org.springframework.context, org.springframework.beans,
                 org.slf4j, org.springframework.context.annotation, org.springframework.stereotype
 Export-Package: ro.codecamp.ebp.core.api.modules;version="1.0.3",
+                ro.codecamp.ebp.core.api.customers;version="1.0.0",
                 ro.codecamp.ebp.core.util;version="1.0.0"
