@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-SymbolicName: ro.codecamp.ebp.feature1
-Bundle-Version: 1.0.0
+Bundle-Version: 1.0.2
 Bundle-Name: Feature One
 Bundle-ClassPath: WEB-INF/classes
 Web-ContextPath: /Feature1

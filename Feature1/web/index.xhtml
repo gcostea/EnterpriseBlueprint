@@ -1,17 +1,14 @@
 <?xml version='1.0' encoding='UTF-8' ?>
-<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"
-                xmlns:h="http://java.sun.com/jsf/html"
-                template="/CoreApplication/templates/main-template.xhtml">
-    Core Module: <h:outputText value="[ None ]" rendered="#{indexBean.registeredCoreModuleInformation eq null}" />
-
-    <h:panelGroup rendered="#{indexBean.registeredCoreModuleInformation != null}">
-        <a href="#{indexBean.registeredCoreModuleInformation.appContext}">#{indexBean.registeredCoreModuleInformation.friendlyName}</a>             
-    </h:panelGroup>
-
-    <h:panelGroup>
-        Hello from Feature One
-    </h:panelGroup>
-
-</ui:composition>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:cc="http://java.sun.com/jsf/composite/comp">
+    <h:head>
+        <title>Modular Application Demo</title>
+        <h:outputStylesheet name="main.css" library="css" />
+    </h:head>
+    <h:body>
+        Back to Core: <a href="#{indexBean.registeredCoreModuleInformation.appContext}">#{indexBean.registeredCoreModuleInformation.friendlyName}</a>
+    </h:body>
+</html>
 

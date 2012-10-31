@@ -1,4 +1,4 @@
-package ro.codecamp.ebp.feature1.ext;
+package ro.codecamp.ebp.core.util;
 
 import javax.faces.FacesException;
 import javax.faces.context.ExternalContext;

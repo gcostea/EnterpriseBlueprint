@@ -7,13 +7,15 @@ import javax.annotation.Resource;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 import ro.codecamp.ebp.core.api.modules.ModuleInfo;
+import ro.codecamp.ebp.core.api.modules.RegisteredCoreModule;
 import ro.codecamp.ebp.core.api.modules.RegisteredModule;
 
 @Component
 @Scope("request")
-public class MainTemplateBean 
+public class IndexBean 
 {   
     @Resource private List<RegisteredModule> registeredModules;
+    @Resource private RegisteredCoreModule registeredCoreModule;
     
     public List<ModuleInfo> getRegisteredModuleInformation()
     {
@@ -26,5 +28,10 @@ public class MainTemplateBean
         }
         
         return registeredModulesInformation;
+    }
+    
+    public ModuleInfo getRegisteredCoreModuleInformation()
+    {
+        return registeredCoreModule.getModuleInfo();
     }
 }
