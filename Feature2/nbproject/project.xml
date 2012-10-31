@@ -13,7 +13,12 @@
                     <file>${reference.CoreAPI.jar}</file>
                 </library>
             </web-module-libraries>
-            <web-module-additional-libraries/>
+            <web-module-additional-libraries>
+                <library dirs="200">
+                    <file>${file.reference.persistence.xml}</file>
+                    <path-in-war>META-INF</path-in-war>
+                </library>
+            </web-module-additional-libraries>
             <source-roots>
                 <root id="src.dir"/>
             </source-roots>

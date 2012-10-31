@@ -28,9 +28,9 @@
                         <a href="#{indexBean.currentModule.moduleInfo.appContext}">#{indexBean.currentModule.moduleInfo.friendlyName}</a>
                     </h:panelGrid>
                     <h:panelGrid styleClass="ModuleContentArea" columnClasses="ModuleContentColumn">
-                        <h:dataTable value="#{indexBean.customerNames}" var="name">
+                        <h:dataTable value="#{indexBean.customerNames}" var="name" styleClass="FeatureDataTable">
                             <h:column>
-                                <f:facet name="header">Customer</f:facet>
+                                <f:facet name="header">Customers</f:facet>
                                 <h:outputText value="#{name}" />
                             </h:column>
                         </h:dataTable>

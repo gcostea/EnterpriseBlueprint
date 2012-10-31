@@ -10,12 +10,20 @@ body { background-color: #e2e2e2; text-align:center; margin:10px; padding-top:10
                     border:solid 1px black; margin:10px; padding:5px; }
 
 .ModuleContentWrapper { text-align:center; margin:auto; width:800px; }
-.ModuleContent { width:100%; height:500px; background-color: #006699; text-align:left;
+.ModuleContent { width:100%; background-color: #006699; text-align:left;
                  border-radius:3px; -moz-border-radius:3px; -webkit-border-radius:3px;
                  border:solid 1px black; margin:10px; padding:5px; }
+.ModuleContentArea { width:97%; height:500px; background-color: #2099d5; text-align:left;
+                 border-radius:3px; -moz-border-radius:3px; -webkit-border-radius:3px;
+                 border:solid 1px black; margin:10px; padding:5px; }
+
 .ModuleContentColumn { vertical-align:top; text-align:left; width:100%; }
 .ModuleContentColumn1 { vertical-align:top; text-align:left; width:20%; }
 .ModuleContentColumn2 { vertical-align:top; text-align:left; width:80%; }
+
+.FeatureDataTable {  }
+.FeatureDataTable th { border-bottom:solid 1px white; color:white; font-weight:bold; }
+.FeatureDataTable td { color:white; }
 
 a:link, a:visited { color:white; text-decoration:none; 
           border-radius:3px; -moz-border-radius:3px; -webkit-border-radius:3px;                                           

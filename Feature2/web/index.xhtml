@@ -3,7 +3,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:cc="http://java.sun.com/jsf/composite/comp">
+      xmlns:cc="http://java.sun.com/jsf/composite/comp"
+      xmlns:f="http://java.sun.com/jsf/core">
     <h:head>
         <title>Modular Application Demo</title>
         <h:outputStylesheet name="css/main.css" library="default" />
@@ -26,7 +27,14 @@
                     <h:panelGrid>
                         <a href="#{indexBean.currentModule.moduleInfo.appContext}">#{indexBean.currentModule.moduleInfo.friendlyName}</a>
                     </h:panelGrid>
-                    <h:panelGrid>Content</h:panelGrid>
+                    <h:panelGrid styleClass="ModuleContentArea" columnClasses="ModuleContentColumn">
+                        <h:dataTable value="#{indexBean.productNames}" var="name" styleClass="FeatureDataTable">
+                            <h:column>
+                                <f:facet name="header">Products</f:facet>
+                                <h:outputText value="#{name}" />
+                            </h:column>
+                        </h:dataTable>
+                    </h:panelGrid>
                 </h:panelGrid>
             </h:panelGrid>
         </h:form>
