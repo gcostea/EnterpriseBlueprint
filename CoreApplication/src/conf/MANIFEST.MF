@@ -4,7 +4,7 @@ Bundle-SymbolicName: ro.codecamp.ebp.core
 Bundle-Version: 1.0.2
 Bundle-Name: Core Application
 Bundle-ClassPath: WEB-INF/classes, WEB-INF/lib/CoreUI.jar
-Web-ContextPath: /CoreApplication
+Web-ContextPath: /CoreApplication-1-0-2
 Spring-Context: *;create-asynchronously:=true
 Import-Package: org.osgi.framework, javax.servlet, javax.annotation, javax.servlet.http,
                 javax.faces, javax.faces.context, javax.faces.view.facelets,
@@ -17,4 +17,4 @@ Import-Package: org.osgi.framework, javax.servlet, javax.annotation, javax.servl
                 org.springframework.core.io, org.springframework.context, org.springframework.beans,
                 org.slf4j, org.springframework.context.annotation, org.springframework.stereotype,
                 ro.codecamp.ebp.core.api.modules;version="1.0.3",
-                ro.codecamp.ebp.core.util;version="1.0.0"
+                ro.codecamp.ebp.core.util;version="1.0.2"

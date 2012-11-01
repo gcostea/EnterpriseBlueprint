@@ -1,10 +1,10 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-SymbolicName: ro.codecamp.ebp.feature2
-Bundle-Version: 1.0.2
-Bundle-Name: Feature Two
+Bundle-SymbolicName: ro.codecamp.ebp.feature3
+Bundle-Version: 1.0.0
+Bundle-Name: Feature Three
 Bundle-ClassPath: WEB-INF/classes
-Web-ContextPath: /Feature2-1-0-2
+Web-ContextPath: /Feature3-1-0-0
 Spring-Context: *;create-asynchronously:=true
 Meta-Persistence: META-INF/persistence.xml
 Import-Package: org.osgi.framework, javax.servlet, javax.servlet.http, javax.annotation,
@@ -20,5 +20,5 @@ Import-Package: org.osgi.framework, javax.servlet, javax.servlet.http, javax.ann
                 org.springframework.core.io, org.springframework.context, org.springframework.beans,
                 org.slf4j, org.springframework.context.annotation, org.springframework.stereotype,
                 ro.codecamp.ebp.core.api.modules;version="1.0.3",
-                ro.codecamp.ebp.core.api.products;version="1.0.0",
+                ro.codecamp.ebp.core.api.manufacturers;version="1.0.0",
                 ro.codecamp.ebp.core.util;version="1.0.2"

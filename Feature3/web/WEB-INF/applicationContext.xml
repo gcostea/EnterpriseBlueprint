@@ -10,23 +10,23 @@
                            http://www.eclipse.org/gemini/blueprint/schema/blueprint
                            http://www.eclipse.org/gemini/blueprint/schema/blueprint/gemini-blueprint.xsd">
 
-    <context:component-scan base-package="ro.codecamp.ebp.feature2" />
+    <context:component-scan base-package="ro.codecamp.ebp.feature3" />
     <context:annotation-config />
         
     <!-- Local Beans -->
-    <bean id="registeredModuleImpl" class="ro.codecamp.ebp.feature2.services.RegisteredModuleImpl" />
-    <bean id="productServiceImpl" class="ro.codecamp.ebp.feature2.services.ProductServiceImpl" />
+    <bean id="registeredModuleImpl" class="ro.codecamp.ebp.feature3.services.RegisteredModuleImpl" />
+    <bean id="manufacturerServiceImpl" class="ro.codecamp.ebp.feature3.services.ManufacturerServiceImpl" />
         
     <!-- Export Services -->
     <osgi:service id="registeredModuleImplSvc" ref="registeredModuleImpl" 
                   interface="ro.codecamp.ebp.core.api.modules.RegisteredModule" />
-    <osgi:service id="productServiceImplSvc" ref="productServiceImpl" 
-                  interface="ro.codecamp.ebp.core.api.products.ProductService" />
+    <osgi:service id="manufacturerServiceImplSvc" ref="manufacturerServiceImpl" 
+                  interface="ro.codecamp.ebp.core.api.manufacturers.ManufacturerService" />
     
     <!-- Import Services -->
     <osgi:reference id="moduleRegistryService" interface="ro.codecamp.ebp.core.api.modules.ModuleRegistryService" />
     <osgi:reference id="entityManagerFactoryBuilder" 
                     interface="org.osgi.service.jpa.EntityManagerFactoryBuilder"
-                    filter="(osgi.unit.name=Feature2PU)" />
+                    filter="(osgi.unit.name=Feature3PU)" />
     
 </beans>
