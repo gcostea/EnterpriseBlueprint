@@ -1,8 +1,7 @@
 package ro.codecamp.ebp.feature1.services;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
+import java.util.Properties;
 import javax.annotation.Resource;
 import javax.persistence.TypedQuery;
 import org.osgi.service.jpa.EntityManagerFactoryBuilder;
@@ -14,17 +13,22 @@ public class CustomerServiceImpl implements CustomerService
 {
     @Resource private EntityManagerFactoryBuilder entityManagerFactoryBuilder;
     
+    //<editor-fold defaultstate="collapsed" desc="Connection Details">
+    private static Properties connProps;
+    {
+        connProps = new Properties();
+        connProps.put("javax.persistence.jdbc.driver", "org.apache.derby.jdbc.ClientDriver");
+        connProps.put("javax.persistence.jdbc.url", "jdbc:derby://localhost:1527/sample");
+        connProps.put("javax.persistence.jdbc.user", "app");
+        connProps.put("javax.persistence.jdbc.password", "app");
+    }
+    //</editor-fold>
+    
     @Override
     public List<String> getCustomerNames(Integer count) 
-    {
-        Map props = new HashMap();
-        props.put("javax.persistence.jdbc.driver", "org.apache.derby.jdbc.ClientDriver");
-        props.put("javax.persistence.jdbc.url", "jdbc:derby://localhost:1527/sample");
-        props.put("javax.persistence.jdbc.user", "app");
-        props.put("javax.persistence.jdbc.password", "app");
-        
-        TypedQuery<String> q = entityManagerFactoryBuilder.createEntityManagerFactory(props).
-            createEntityManager(props).createQuery("SELECT c.name FROM Customer c", String.class);
+    {        
+        TypedQuery<String> q = entityManagerFactoryBuilder.createEntityManagerFactory(connProps).
+            createEntityManager(connProps).createQuery("SELECT c.name FROM Customer c", String.class);
         q.setMaxResults(count);
         
         return q.getResultList();

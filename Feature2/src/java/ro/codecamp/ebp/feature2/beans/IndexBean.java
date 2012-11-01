@@ -21,23 +21,13 @@ public class IndexBean
         return moduleRegistryService;
     }
 
-    public void setModuleRegistryService(ModuleRegistryService moduleRegistryService) 
-    {
-        this.moduleRegistryService = moduleRegistryService;
-    } 
-
     public RegisteredModule getCurrentModule() 
     {
         return currentModule;
-    }
-
-    public void setCurrentModule(RegisteredModule currentModule) 
-    {
-        this.currentModule = currentModule;
     }  
     
     public List<String> getProductNames()
     {
-        return this.productService.getProductNames(10);
+        return productService.getProductNames(10);
     }
 }

@@ -15,9 +15,4 @@ public class IndexBean
     {
         return moduleRegistryService;
     }
-
-    public void setModuleRegistryService(ModuleRegistryService moduleRegistryService) 
-    {
-        this.moduleRegistryService = moduleRegistryService;
-    }       
 }

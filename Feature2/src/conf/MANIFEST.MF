@@ -4,7 +4,7 @@ Bundle-SymbolicName: ro.codecamp.ebp.feature2
 Bundle-Version: 1.0.2
 Bundle-Name: Feature Two
 Bundle-ClassPath: WEB-INF/classes
-Web-ContextPath: /Feature2-1-0-2
+Web-ContextPath: /FeatureTwo-1-0-2
 Spring-Context: *;create-asynchronously:=true
 Meta-Persistence: META-INF/persistence.xml
 Import-Package: org.osgi.framework, javax.servlet, javax.servlet.http, javax.annotation,

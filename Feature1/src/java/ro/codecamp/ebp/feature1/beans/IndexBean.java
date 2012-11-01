@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 import ro.codecamp.ebp.core.api.customers.CustomerService;
 import ro.codecamp.ebp.core.api.modules.ModuleRegistryService;
 import ro.codecamp.ebp.core.api.modules.RegisteredModule;
+import ro.codecamp.ebp.core.api.products.ProductService;
 
 @Component
 @Scope("request")
@@ -15,29 +16,29 @@ public class IndexBean
     @Resource private ModuleRegistryService moduleRegistryService;
     @Resource private RegisteredModule currentModule;
     @Resource private CustomerService customerService;
+    @Resource private ProductService productService;
 
     public ModuleRegistryService getModuleRegistryService() 
     {
         return moduleRegistryService;
     }
 
-    public void setModuleRegistryService(ModuleRegistryService moduleRegistryService) 
-    {
-        this.moduleRegistryService = moduleRegistryService;
-    } 
-
     public RegisteredModule getCurrentModule() 
     {
         return currentModule;
     }
-
-    public void setCurrentModule(RegisteredModule currentModule) 
-    {
-        this.currentModule = currentModule;
-    }
     
     public List<String> getCustomerNames()
     {
-        return customerService.getCustomerNames(10);
+        List<String> customerNames = customerService.getCustomerNames(10);
+        
+        for(String customerName : customerNames)
+        {
+            customerName = String.format(
+                "%s (%d Products)", customerName, productService.getProductCountForCustomer(customerName)
+            );
+        }
+        
+        return customerNames;
     }
 }

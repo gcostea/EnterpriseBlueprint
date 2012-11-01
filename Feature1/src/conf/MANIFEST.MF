@@ -4,7 +4,7 @@ Bundle-SymbolicName: ro.codecamp.ebp.feature1
 Bundle-Version: 1.0.3
 Bundle-Name: Feature One
 Bundle-ClassPath: WEB-INF/classes
-Web-ContextPath: /Feature1-1-0-3
+Web-ContextPath: /FeatureOne-1-0-3
 Spring-Context: *;create-asynchronously:=true
 Meta-Persistence: META-INF/persistence.xml
 Import-Package: org.osgi.framework, javax.servlet, javax.servlet.http, javax.annotation,
@@ -21,4 +21,5 @@ Import-Package: org.osgi.framework, javax.servlet, javax.servlet.http, javax.ann
                 org.slf4j, org.springframework.context.annotation, org.springframework.stereotype,
                 ro.codecamp.ebp.core.api.modules;version="1.0.3",
                 ro.codecamp.ebp.core.api.customers;version="1.0.0",
+                ro.codecamp.ebp.core.api.products;version="1.0.1",
                 ro.codecamp.ebp.core.util;version="1.0.2"
