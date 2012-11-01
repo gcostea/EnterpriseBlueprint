@@ -12,6 +12,7 @@
     <h:body>
         <h:form id="MainForm">
             <cc:poll interval="1000" render="MainForm:CoreModule" />
+            <cc:poll interval="1000" render="MainForm:DataTable" />
             <h:panelGrid columns="2" styleClass="ModuleContentWrapper" columnClasses="ModuleContentColumn1,ModuleContentColumn2">
                 <h:panelGrid id="CoreModule" styleClass="CoreModuleNav">
                     <a href="#{indexBean.moduleRegistryService.coreModuleInfo.appContext}">
@@ -28,7 +29,7 @@
                         <a href="#{indexBean.currentModule.moduleInfo.appContext}">#{indexBean.currentModule.moduleInfo.friendlyName}</a>
                     </h:panelGrid>
                     <h:panelGrid styleClass="ModuleContentArea" columnClasses="ModuleContentColumn">
-                        <h:dataTable value="#{indexBean.customerInfo}" var="info" styleClass="FeatureDataTable">
+                        <h:dataTable id="DataTable" value="#{indexBean.customerInfo}" var="info" styleClass="FeatureDataTable">
                             <h:column>
                                 <f:facet name="header">Customer</f:facet>
                                 <h:outputText value="#{info.customerName}" />

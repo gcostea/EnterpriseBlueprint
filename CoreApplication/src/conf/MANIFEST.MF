@@ -12,7 +12,7 @@ Import-Package: org.osgi.framework, javax.servlet, javax.annotation, javax.servl
                 org.springframework.web.context, org.springframework.web.context.support,
                 org.springframework.util, org.springframework.ui.context.support,
                 org.springframework.ui.context, org.eclipse.gemini.blueprint.extender,
-                org.springframework.beans.factory.config,
+                org.springframework.beans.factory.config, org.eclipse.gemini.blueprint.service,
                 org.eclipse.gemini.blueprint.context.support, org.eclipse.gemini.blueprint.context,
                 org.springframework.core.io, org.springframework.context, org.springframework.beans,
                 org.slf4j, org.springframework.context.annotation, org.springframework.stereotype,

@@ -3,6 +3,7 @@ package ro.codecamp.ebp.feature3.beans;
 import java.util.ArrayList;
 import java.util.List;
 import javax.annotation.Resource;
+import org.eclipse.gemini.blueprint.service.ServiceUnavailableException;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 import ro.codecamp.ebp.core.api.manufacturers.ManufacturerService;
@@ -37,11 +38,22 @@ public class IndexBean
         
         for(String manufacturerName : manufacturerNames)
         {
-            manufacturerInfo.add(
-                new ManufacturerProducts(
-                    manufacturerName, productService.getProductCountForManufacturer(manufacturerName)
-                )
-            );
+            try
+            {
+                manufacturerInfo.add(
+                    new ManufacturerProducts(
+                        manufacturerName, productService.getProductCountForManufacturer(manufacturerName)
+                    )
+                );
+            }
+            catch(ServiceUnavailableException ex)
+            {
+                manufacturerInfo.add(
+                    new ManufacturerProducts(
+                        manufacturerName, 0L
+                    )
+                );
+            }
         }
         
         return manufacturerInfo;

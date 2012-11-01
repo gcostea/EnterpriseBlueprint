@@ -3,6 +3,7 @@ package ro.codecamp.ebp.feature1.beans;
 import java.util.ArrayList;
 import java.util.List;
 import javax.annotation.Resource;
+import org.eclipse.gemini.blueprint.service.ServiceUnavailableException;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 import ro.codecamp.ebp.core.api.customers.CustomerService;
@@ -37,11 +38,22 @@ public class IndexBean
         
         for(String customerName : customerNames)
         {
-            customerInfo.add(
-                new CustomerProducts(
-                    customerName, productService.getProductCountForCustomer(customerName)
-                )
-            );
+            try
+            {
+                customerInfo.add(
+                    new CustomerProducts(
+                        customerName, productService.getProductCountForCustomer(customerName)
+                    )
+                );
+            }
+            catch(ServiceUnavailableException ex)
+            {
+                customerInfo.add(
+                    new CustomerProducts(
+                        customerName, 0L
+                    )
+                );
+            }
         }
         
         return customerInfo;

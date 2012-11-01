@@ -26,7 +26,7 @@
     <!-- Import Services -->
     <osgi:reference id="moduleRegistryService" availability="mandatory"
                     interface="ro.codecamp.ebp.core.api.modules.ModuleRegistryService" />
-    <osgi:reference id="productService" availability="optional"
+    <osgi:reference id="productService" availability="optional" timeout="0"
                     interface="ro.codecamp.ebp.core.api.products.ProductService" />
     <osgi:reference id="entityManagerFactoryBuilder" availability="mandatory" 
                     interface="org.osgi.service.jpa.EntityManagerFactoryBuilder"

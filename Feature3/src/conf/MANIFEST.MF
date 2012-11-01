@@ -13,7 +13,7 @@ Import-Package: org.osgi.framework, javax.servlet, javax.servlet.http, javax.ann
                 org.springframework.web.context, org.springframework.web.context.support,
                 org.springframework.util, org.springframework.ui.context.support,
                 org.springframework.ui.context, org.eclipse.gemini.blueprint.extender,
-                org.springframework.beans.factory.config,
+                org.springframework.beans.factory.config, org.eclipse.gemini.blueprint.service,
                 javax.persistence, javax.persistence.metamodel, 
                 org.osgi.service.jpa, org.apache.derby.jdbc,
                 org.eclipse.gemini.blueprint.context.support, org.eclipse.gemini.blueprint.context,
