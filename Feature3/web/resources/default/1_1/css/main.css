@@ -5,7 +5,7 @@ body { background-color: #e2e2e2; text-align:center; margin:10px; padding-top:10
 .CoreModuleNav { background-color: #006699; border:solid 1px black; 
                  border-radius:3px; -moz-border-radius:3px; -webkit-border-radius:3px;
                  padding:3px; margin:10px; text-align:center; }
-.FeatureModuleNav { width:150px; height:30px; background-color: #2099d5; text-align:center;
+.FeatureModuleNav { width:250px; height:30px; background-color: #2099d5; text-align:center;
                     border-radius:3px; -moz-border-radius:3px; -webkit-border-radius:3px;
                     border:solid 1px black; margin:10px; padding:5px; }
 

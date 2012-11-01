@@ -20,7 +20,7 @@ public class RegisteredModuleImpl implements RegisteredModule
         ModuleInfo info = new ModuleInfo();
         
         info.setName(bundleContext.getBundle().getSymbolicName());
-        info.setFriendlyName("Feature Three");
+        info.setFriendlyName("Manufacturer Feature");
         info.setVersion(bundleContext.getBundle().getVersion().toString());
         info.setAppContext(servletContext.getContextPath());
         

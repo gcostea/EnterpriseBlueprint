@@ -5,7 +5,7 @@ body { background-color: #e2e2e2; text-align:center; margin:auto; padding-top:50
 .CoreModule { background-color: #006699; border:solid 1px black; 
               border-radius:5px; -moz-border-radius:5px; -webkit-border-radius:5px;
               padding:20px; margin:auto; }
-.FeatureModule { width:200px; height:50px; background-color: #2099d5; 
+.FeatureModule { width:300px; height:40px; background-color: #2099d5; 
                  border-radius:5px; -moz-border-radius:5px; -webkit-border-radius:5px;
                  border:solid 1px black; margin:20px; padding:20px; }
 

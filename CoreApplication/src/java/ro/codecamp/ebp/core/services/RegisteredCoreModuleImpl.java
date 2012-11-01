@@ -18,7 +18,7 @@ public class RegisteredCoreModuleImpl implements RegisteredCoreModule
         ModuleInfo info = new ModuleInfo();
         
         info.setName(bundleContext.getBundle().getSymbolicName());
-        info.setFriendlyName("Core Product");
+        info.setFriendlyName("Core Feature");
         info.setVersion(bundleContext.getBundle().getVersion().toString());
         info.setAppContext(servletContext.getContextPath());
         
