@@ -24,9 +24,11 @@
                   interface="ro.codecamp.ebp.core.api.manufacturers.ManufacturerService" />
     
     <!-- Import Services -->
-    <osgi:reference id="moduleRegistryService" interface="ro.codecamp.ebp.core.api.modules.ModuleRegistryService" />
-    <osgi:reference id="productService" interface="ro.codecamp.ebp.core.api.products.ProductService" />
-    <osgi:reference id="entityManagerFactoryBuilder" 
+    <osgi:reference id="moduleRegistryService" availability="mandatory"
+                    interface="ro.codecamp.ebp.core.api.modules.ModuleRegistryService" />
+    <osgi:reference id="productService" availability="optional"
+                    interface="ro.codecamp.ebp.core.api.products.ProductService" />
+    <osgi:reference id="entityManagerFactoryBuilder" availability="mandatory" 
                     interface="org.osgi.service.jpa.EntityManagerFactoryBuilder"
                     filter="(osgi.unit.name=Feature3PU)" />
     

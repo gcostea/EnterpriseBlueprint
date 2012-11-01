@@ -1,5 +1,6 @@
 package ro.codecamp.ebp.feature3.beans;
 
+import java.util.ArrayList;
 import java.util.List;
 import javax.annotation.Resource;
 import org.springframework.context.annotation.Scope;
@@ -31,14 +32,16 @@ public class IndexBean
     public List<String> getManufacturerNames()
     {
         List<String> manufacturerNames =  manufacturerService.getManufacturerNames(10);
+        List<String> manufacturerInfo = new ArrayList<String>();
         
         for(String manufacturerName : manufacturerNames)
         {
-            manufacturerName = String.format(
-                "%s (%d Products)", manufacturerName, productService.getProductCountForManufacturer(manufacturerName)
-            );
+            manufacturerInfo.add(String.format(
+                "%s (%d Products)", manufacturerName,
+                productService.getProductCountForManufacturer(manufacturerName)
+            ));
         }
         
-        return manufacturerNames;
+        return manufacturerInfo;
     }
 }

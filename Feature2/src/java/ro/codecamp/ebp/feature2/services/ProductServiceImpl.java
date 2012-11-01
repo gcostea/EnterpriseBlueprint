@@ -1,8 +1,6 @@
 package ro.codecamp.ebp.feature2.services;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Properties;
 import javax.annotation.Resource;
 import javax.persistence.TypedQuery;

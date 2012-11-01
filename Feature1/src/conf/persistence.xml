@@ -6,10 +6,6 @@
     <class>ro.codecamp.ebp.feature1.entities.Customer</class>
     <class>ro.codecamp.ebp.feature1.entities.DiscountCode</class>
     <class>ro.codecamp.ebp.feature1.entities.MicroMarket</class>
-    <class>ro.codecamp.ebp.feature1.entities.Manufacturer</class>
-    <class>ro.codecamp.ebp.feature1.entities.Product</class>
-    <class>ro.codecamp.ebp.feature1.entities.ProductCode</class>
-    <class>ro.codecamp.ebp.feature1.entities.PurchaseOrder</class>
     <exclude-unlisted-classes>true</exclude-unlisted-classes>
     <properties/>
   </persistence-unit>

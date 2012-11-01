@@ -1,5 +1,6 @@
 package ro.codecamp.ebp.feature1.beans;
 
+import java.util.ArrayList;
 import java.util.List;
 import javax.annotation.Resource;
 import org.springframework.context.annotation.Scope;
@@ -31,14 +32,16 @@ public class IndexBean
     public List<String> getCustomerNames()
     {
         List<String> customerNames = customerService.getCustomerNames(10);
+        List<String> customerInfo = new ArrayList<String>();
         
         for(String customerName : customerNames)
         {
-            customerName = String.format(
-                "%s (%d Products)", customerName, productService.getProductCountForCustomer(customerName)
-            );
+            customerInfo.add(String.format(
+                "%s (%d Products)", customerName,
+                productService.getProductCountForCustomer(customerName)
+            ));
         }
         
-        return customerNames;
+        return customerInfo;
     }
 }
