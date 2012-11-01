@@ -9,6 +9,7 @@ import ro.codecamp.ebp.core.api.customers.CustomerService;
 import ro.codecamp.ebp.core.api.modules.ModuleRegistryService;
 import ro.codecamp.ebp.core.api.modules.RegisteredModule;
 import ro.codecamp.ebp.core.api.products.ProductService;
+import ro.codecamp.ebp.feature1.wrappers.CustomerProducts;
 
 @Component
 @Scope("request")
@@ -29,17 +30,18 @@ public class IndexBean
         return currentModule;
     }
     
-    public List<String> getCustomerNames()
+    public List<CustomerProducts> getCustomerInfo()
     {
-        List<String> customerNames = customerService.getCustomerNames(10);
-        List<String> customerInfo = new ArrayList<String>();
+        List<String> customerNames = customerService.getCustomerNames(20);
+        List<CustomerProducts> customerInfo = new ArrayList<CustomerProducts>();
         
         for(String customerName : customerNames)
         {
-            customerInfo.add(String.format(
-                "%s (%d Products)", customerName,
-                productService.getProductCountForCustomer(customerName)
-            ));
+            customerInfo.add(
+                new CustomerProducts(
+                    customerName, productService.getProductCountForCustomer(customerName)
+                )
+            );
         }
         
         return customerInfo;

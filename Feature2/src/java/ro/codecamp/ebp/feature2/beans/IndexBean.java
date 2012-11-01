@@ -28,6 +28,6 @@ public class IndexBean
     
     public List<String> getProductNames()
     {
-        return productService.getProductNames(10);
+        return productService.getProductNames(20);
     }
 }

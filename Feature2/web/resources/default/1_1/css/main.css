@@ -21,7 +21,7 @@ body { background-color: #e2e2e2; text-align:center; margin:10px; padding-top:10
 .ModuleContentColumn1 { vertical-align:top; text-align:left; width:20%; }
 .ModuleContentColumn2 { vertical-align:top; text-align:left; width:80%; }
 
-.FeatureDataTable {  }
+.FeatureDataTable { width:100%; }
 .FeatureDataTable th { border-bottom:solid 1px white; color:white; font-weight:bold; }
 .FeatureDataTable td { color:white; }
 

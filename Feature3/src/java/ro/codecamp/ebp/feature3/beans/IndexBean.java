@@ -9,6 +9,7 @@ import ro.codecamp.ebp.core.api.manufacturers.ManufacturerService;
 import ro.codecamp.ebp.core.api.modules.ModuleRegistryService;
 import ro.codecamp.ebp.core.api.modules.RegisteredModule;
 import ro.codecamp.ebp.core.api.products.ProductService;
+import ro.codecamp.ebp.feature3.wrappers.ManufacturerProducts;
 
 @Component
 @Scope("request")
@@ -29,17 +30,18 @@ public class IndexBean
         return currentModule;
     }
     
-    public List<String> getManufacturerNames()
+    public List<ManufacturerProducts> getManufacturerInfo()
     {
         List<String> manufacturerNames =  manufacturerService.getManufacturerNames(10);
-        List<String> manufacturerInfo = new ArrayList<String>();
+        List<ManufacturerProducts> manufacturerInfo = new ArrayList<ManufacturerProducts>();
         
         for(String manufacturerName : manufacturerNames)
         {
-            manufacturerInfo.add(String.format(
-                "%s (%d Products)", manufacturerName,
-                productService.getProductCountForManufacturer(manufacturerName)
-            ));
+            manufacturerInfo.add(
+                new ManufacturerProducts(
+                    manufacturerName, productService.getProductCountForManufacturer(manufacturerName)
+                )
+            );
         }
         
         return manufacturerInfo;

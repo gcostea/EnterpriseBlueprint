@@ -28,10 +28,14 @@
                         <a href="#{indexBean.currentModule.moduleInfo.appContext}">#{indexBean.currentModule.moduleInfo.friendlyName}</a>
                     </h:panelGrid>
                     <h:panelGrid styleClass="ModuleContentArea" columnClasses="ModuleContentColumn">
-                        <h:dataTable value="#{indexBean.manufacturerNames}" var="name" styleClass="FeatureDataTable">
+                        <h:dataTable value="#{indexBean.manufacturerInfo}" var="info" styleClass="FeatureDataTable">
                             <h:column>
-                                <f:facet name="header">Manufacturers</f:facet>
-                                <h:outputText value="#{name}" />
+                                <f:facet name="header">Manufacturer</f:facet>
+                                <h:outputText value="#{info.manufacturerName}" />
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">Product Count</f:facet>
+                                <h:outputText value="#{info.manufacturerProducts}" />
                             </h:column>
                         </h:dataTable>
                     </h:panelGrid>
