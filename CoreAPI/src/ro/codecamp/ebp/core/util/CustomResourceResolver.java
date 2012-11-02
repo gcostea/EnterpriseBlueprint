@@ -9,7 +9,7 @@ import ro.codecamp.ebp.core.api.features.RegistryAwareCoreFeature;
 
 public class CustomResourceResolver extends ResourceResolver
 {
-    private RegistryAwareCoreFeature registeredCoreModule;
+    private RegistryAwareCoreFeature registeredCoreFeature;
     private ResourceResolver parent;
    
     public CustomResourceResolver(ResourceResolver parent) 
@@ -20,13 +20,13 @@ public class CustomResourceResolver extends ResourceResolver
         ServiceReference ref = currentBundle.getBundleContext().getServiceReference(
             RegistryAwareCoreFeature.class.getName()
         );        
-        registeredCoreModule = (RegistryAwareCoreFeature) currentBundle.getBundleContext().getService(ref);
+        registeredCoreFeature = (RegistryAwareCoreFeature) currentBundle.getBundleContext().getService(ref);
     }
 
     @Override
     public URL resolveUrl(String path) 
     {
-        URL url = registeredCoreModule.getResource(path);
+        URL url = registeredCoreFeature.getResource(path);
         
         if (url == null) 
         {

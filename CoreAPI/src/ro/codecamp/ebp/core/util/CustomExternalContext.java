@@ -11,7 +11,7 @@ import ro.codecamp.ebp.core.api.features.RegistryAwareCoreFeature;
 
 public class CustomExternalContext extends ExternalContextWrapper 
 {
-    private RegistryAwareCoreFeature registeredCoreModule;
+    private RegistryAwareCoreFeature registeredCoreFeature;
     private ExternalContext wrapped;
 
     public CustomExternalContext(ExternalContext externalContext) 
@@ -21,13 +21,13 @@ public class CustomExternalContext extends ExternalContextWrapper
         ServiceReference ref = currentBundle.getBundleContext().getServiceReference(
             RegistryAwareCoreFeature.class.getName()
         );        
-        registeredCoreModule = (RegistryAwareCoreFeature) currentBundle.getBundleContext().getService(ref);
+        registeredCoreFeature = (RegistryAwareCoreFeature) currentBundle.getBundleContext().getService(ref);
     }
 
     @Override
     public URL getResource(String path) throws MalformedURLException 
     {
-        URL url = registeredCoreModule.getResource(path);
+        URL url = registeredCoreFeature.getResource(path);
         
         if (url == null) 
         {
