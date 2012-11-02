@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:osgi="http://www.eclipse.org/gemini/blueprint/schema/blueprint"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context-3.0.xsd
+                           http://www.eclipse.org/gemini/blueprint/schema/blueprint
+                           http://www.eclipse.org/gemini/blueprint/schema/blueprint/gemini-blueprint.xsd">
+
+    <context:component-scan base-package="ro.codecamp.ebp.features.product" />
+    <context:annotation-config />
+        
+    <!-- Import Services -->
+    <osgi:reference id="featureRegistryService" availability="mandatory"
+                    interface="ro.codecamp.ebp.core.api.features.FeatureRegistryService" />
+    <osgi:reference id="entityManagerFactoryBuilder" availability="mandatory" 
+                    interface="org.osgi.service.jpa.EntityManagerFactoryBuilder"
+                    filter="(osgi.unit.name=ProductFeaturePU)" />
+    
+    <!-- Local Beans -->
+    <bean id="productFeature" class="ro.codecamp.ebp.features.product.ProductFeature" />
+    <bean id="productServiceImpl" class="ro.codecamp.ebp.features.product.services.ProductServiceImpl" />
+        
+    <!-- Export Services -->
+    <osgi:service id="productFeatureSvc" ref="productFeature" 
+                  interface="ro.codecamp.ebp.core.api.features.RegistryAwareFeature" />
+    <osgi:service id="productServiceImplSvc" ref="productServiceImpl" 
+                  interface="ro.codecamp.ebp.core.api.services.products.ProductService" />
+    
+</beans>

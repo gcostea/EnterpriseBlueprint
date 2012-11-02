@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:cc="http://java.sun.com/jsf/composite/comp"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Modular Application Demo</title>
+        <h:outputStylesheet name="css/main.css" library="default" />
+    </h:head>
+    <h:body>
+        <h:form id="MainForm">
+            <cc:poll interval="1000" render="MainForm:CoreModule" />
+            <cc:poll interval="1000" render="MainForm:DataTable" />
+            <h:panelGrid columns="2" styleClass="ModuleContentWrapper" columnClasses="ModuleContentColumn1,ModuleContentColumn2">
+                <h:panelGrid id="CoreModule" styleClass="CoreModuleNav">
+                    <a href="#{indexBean.featureRegistryService.coreFeatureInfo.appContext}">
+                        #{indexBean.featureRegistryService.coreFeatureInfo.friendlyName}</a>
+                    <ui:repeat value="#{indexBean.featureRegistryService.registeredFeaturesInfo}" var="feature">
+                        <h:panelGrid styleClass="FeatureModuleNav" 
+                                     rendered="#{indexBean.currentFeature.featureInfo.name != feature.name}">
+                            <a href="#{feature.appContext}">#{feature.friendlyName}</a>
+                        </h:panelGrid>
+                    </ui:repeat>
+                </h:panelGrid>
+                <h:panelGrid styleClass="ModuleContent" columnClasses="ModuleContentColumn">
+                    <h:panelGrid>
+                        <a href="#{indexBean.currentFeature.featureInfo.appContext}">#{indexBean.currentFeature.featureInfo.friendlyName}</a>
+                    </h:panelGrid>
+                    <h:panelGrid styleClass="ModuleContentArea" columnClasses="ModuleContentColumn">
+                        <h:dataTable id="DataTable" value="#{indexBean.customerInfo}" var="info" styleClass="FeatureDataTable">
+                            <h:column>
+                                <f:facet name="header">Customer</f:facet>
+                                <h:outputText value="#{info.customerName}" />
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">Product Count</f:facet>
+                                <h:outputText value="#{info.customerProducts}" />
+                            </h:column>
+                        </h:dataTable>
+                    </h:panelGrid>
+                </h:panelGrid>
+            </h:panelGrid>
+        </h:form>
+    </h:body>
+</html>
+

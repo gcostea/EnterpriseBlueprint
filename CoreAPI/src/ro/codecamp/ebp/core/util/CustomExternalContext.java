@@ -7,11 +7,11 @@ import javax.faces.context.ExternalContextWrapper;
 import org.osgi.framework.Bundle;
 import org.osgi.framework.FrameworkUtil;
 import org.osgi.framework.ServiceReference;
-import ro.codecamp.ebp.core.api.modules.RegisteredCoreModule;
+import ro.codecamp.ebp.core.api.features.RegistryAwareCoreFeature;
 
 public class CustomExternalContext extends ExternalContextWrapper 
 {
-    private RegisteredCoreModule registeredCoreModule;
+    private RegistryAwareCoreFeature registeredCoreModule;
     private ExternalContext wrapped;
 
     public CustomExternalContext(ExternalContext externalContext) 
@@ -19,9 +19,9 @@ public class CustomExternalContext extends ExternalContextWrapper
         wrapped = externalContext;
         Bundle currentBundle = FrameworkUtil.getBundle(CustomResourceResolver.class);
         ServiceReference ref = currentBundle.getBundleContext().getServiceReference(
-            RegisteredCoreModule.class.getName()
+            RegistryAwareCoreFeature.class.getName()
         );        
-        registeredCoreModule = (RegisteredCoreModule) currentBundle.getBundleContext().getService(ref);
+        registeredCoreModule = (RegistryAwareCoreFeature) currentBundle.getBundleContext().getService(ref);
     }
 
     @Override

@@ -1,0 +1,25 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: ro.codecamp.ebp.features.customer
+Bundle-Version: 1.0.4
+Bundle-Name: Customer Feature
+Bundle-ClassPath: WEB-INF/classes
+Web-ContextPath: /CustomerFeature-104
+Spring-Context: *;create-asynchronously:=true
+Meta-Persistence: META-INF/persistence.xml
+Import-Package: org.osgi.framework, javax.servlet, javax.servlet.http, javax.annotation,
+                javax.inject, javax.servlet.annotation,org.springframework.web.jsf,
+                javax.faces, javax.faces.context, javax.faces.view.facelets,
+                org.springframework.web.context, org.springframework.web.context.support,
+                org.springframework.util, org.springframework.ui.context.support,
+                org.springframework.ui.context, org.eclipse.gemini.blueprint.extender,
+                org.springframework.beans.factory.config, org.eclipse.gemini.blueprint.service,
+                javax.persistence, javax.persistence.metamodel, 
+                org.osgi.service.jpa, org.apache.derby.jdbc,
+                org.eclipse.gemini.blueprint.context.support, org.eclipse.gemini.blueprint.context,
+                org.springframework.core.io, org.springframework.context, org.springframework.beans,
+                org.slf4j, org.springframework.context.annotation, org.springframework.stereotype,
+                ro.codecamp.ebp.core.api.features;version="[1.0.4,1.0.4]",
+                ro.codecamp.ebp.core.api.services.customers;version="[1.0.1,1.0.1]",
+                ro.codecamp.ebp.core.api.services.products;version="[1.0.2,1.0.2]",
+                ro.codecamp.ebp.core.util;version="1.0.2"

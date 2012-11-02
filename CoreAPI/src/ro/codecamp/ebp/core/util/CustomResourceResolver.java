@@ -5,11 +5,11 @@ import javax.faces.view.facelets.ResourceResolver;
 import org.osgi.framework.Bundle;
 import org.osgi.framework.FrameworkUtil;
 import org.osgi.framework.ServiceReference;
-import ro.codecamp.ebp.core.api.modules.RegisteredCoreModule;
+import ro.codecamp.ebp.core.api.features.RegistryAwareCoreFeature;
 
 public class CustomResourceResolver extends ResourceResolver
 {
-    private RegisteredCoreModule registeredCoreModule;
+    private RegistryAwareCoreFeature registeredCoreModule;
     private ResourceResolver parent;
    
     public CustomResourceResolver(ResourceResolver parent) 
@@ -18,9 +18,9 @@ public class CustomResourceResolver extends ResourceResolver
 
         Bundle currentBundle = FrameworkUtil.getBundle(CustomResourceResolver.class);
         ServiceReference ref = currentBundle.getBundleContext().getServiceReference(
-            RegisteredCoreModule.class.getName()
+            RegistryAwareCoreFeature.class.getName()
         );        
-        registeredCoreModule = (RegisteredCoreModule) currentBundle.getBundleContext().getService(ref);
+        registeredCoreModule = (RegistryAwareCoreFeature) currentBundle.getBundleContext().getService(ref);
     }
 
     @Override

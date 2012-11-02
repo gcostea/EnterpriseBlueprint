@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:osgi="http://www.eclipse.org/gemini/blueprint/schema/blueprint"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context-3.0.xsd
+                           http://www.eclipse.org/gemini/blueprint/schema/blueprint
+                           http://www.eclipse.org/gemini/blueprint/schema/blueprint/gemini-blueprint.xsd">
+   
+    <context:component-scan base-package="ro.codecamp.ebp.features.core" />
+    <context:annotation-config />      
+    
+    <!-- Import Services -->
+    <osgi:list id="registeredFeatures" interface="ro.codecamp.ebp.core.api.features.RegistryAwareFeature" />
+
+    <!-- Service Implementation Beans -->
+    <bean id="coreFeature" class="ro.codecamp.ebp.features.core.CoreFeature" />
+    <bean id="featureRegistryService" class="ro.codecamp.ebp.features.core.services.CoreFeatureRegistryService" />
+        
+    <!-- Export Services -->
+    <osgi:service id="coreFeatureSvc" ref="coreFeature" 
+                  interface="ro.codecamp.ebp.core.api.features.RegistryAwareCoreFeature" />
+    <osgi:service id="featureRegistryServiceSvc" ref="featureRegistryService" 
+                  interface="ro.codecamp.ebp.core.api.features.FeatureRegistryService" />
+    
+</beans>
